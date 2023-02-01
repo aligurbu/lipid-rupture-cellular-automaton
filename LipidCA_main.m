@@ -61,7 +61,7 @@ fractureArea = zeros(numberOfIterations,1);
 
 [cellStatus, clusterInfo, numClusters] = assignPinStatus(cellStatus, clusterInfo, cellLocation, circleCurrentRadius, numCells, numClusters, pinningProb, clusterProb);
 [cellStatus, clusterInfo] = createClusterChain(cellStatus, clusterInfo, cellLocation, cellNeighbors, numClusters, clusterThresh, circleCurrentRadius, radiusThresholdParameter);
-[wettedArea(1), fractureArea(1)] = computeAreas(cellStatus, numCells);
+% [wettedArea(1), fractureArea(1)] = computeAreas(cellStatus, numCells);
 
 F(1) = getFigures(cellStatus, cellLocation, cellKey, automationSize, pinningProb, clusterProb, clusterThresh, percolationThresh, circleMaxRadius, circleCurrentRadius);
 for iteration = 1:numberOfIterations
@@ -87,7 +87,7 @@ for iteration = 1:numberOfIterations
     [cellStatus, clusterInfo, numClusters, F] = checkFracture(F, cellStatus, clusterInfo, cellKey, cellLocation, cellNeighbors, numClusters, numCells, automationSize, pinningProb, clusterProb, clusterThresh, percolationThresh, circleMaxRadius, circleCurrentRadius, avalancheParameter);
 
     % Compute areas
-    [wettedArea(iteration), fractureArea(iteration)] = computeAreas(cellStatus, numCells);
+%     [wettedArea(iteration), fractureArea(iteration)] = computeAreas(cellStatus, numCells);
 
     % Get figure
     F(end+1) = getFigures(cellStatus, cellLocation, cellKey, automationSize, pinningProb, clusterProb, clusterThresh, percolationThresh, circleMaxRadius, circleCurrentRadius);
